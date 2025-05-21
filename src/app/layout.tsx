@@ -1,15 +1,22 @@
-import { Inter } from "next/font/google";
+import type { Metadata } from "next";
+import { GeistSans, GeistMono } from 'geist/font';
+import "./globals.css";
 
-const inter = Inter({ subsets: ['latin'] })
+export const metadata: Metadata = {
+  title: "Postres Paolita",
+  description: "Postres al por mayor y menor",
+};
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode
-}) {
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
-    <html lang="en" className={inter.className}>
-      <body>{children}</body>
+    <html lang="es" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+      <body className="font-sans antialiased">
+        {children}
+      </body>
     </html>
-  )
+  );
 }
