@@ -5,6 +5,8 @@ const nextConfig: NextConfig = {
   images: {
     domains: ['highcook.com.pe'],
   },
+  output: 'export',
+  basePath: '/Rostres', 
 };
 
 export default nextConfig;
